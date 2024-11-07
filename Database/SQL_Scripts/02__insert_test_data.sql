@@ -2,19 +2,6 @@ USE casedb; /* UPDATED 2024-02-26 */
 
 /* INSERTS */
 
-/* --- Insert: City --- */
-INSERT INTO `City` (`name`, `population`, `country`) VALUES
-    ('Helsinki', 656611, 'Finland'),
-    ('Espoo', 292913, 'Finland'),
-    ('Vantaa', 237231, 'Finland'),
-    ('Tampere', 238140, 'Finland'),
-    ('Turku', 195137, 'Finland'),
-    ('Oulu', 209648, 'Finland'),
-    ('Jyväskylä', 143948, 'Finland'),
-    ('Lahti', 120564, 'Finland'),
-    ('Kuopio', 118667, 'Finland'),
-    ('Pori', 83503, 'Finland');
-
 /* --- Insert: GlobalSettings --- */
 INSERT INTO GlobalSetting(variable, description, numberValue, textValue) VALUES
     ('highPriority', 'High priority value', 800, NULL),
@@ -64,6 +51,19 @@ INSERT INTO `Building` (`name`, `description`) VALUES
 	('Musiikkitalo', NULL),
 	('N-talo', 'Sibeliusakatemian opetus ja harjoittelu talo '),
 	('R-talo', 'Sibeliusakatemian konserttitalo');
+
+/* --- Insert: City --- */
+INSERT INTO `City` (`name`, `population`, `country`) VALUES
+    ('Helsinki', 656611, 'Finland'),
+    ('Espoo', 292913, 'Finland'),
+    ('Vantaa', 237231, 'Finland'),
+    ('Tampere', 238140, 'Finland'),
+    ('Turku', 195137, 'Finland'),
+    ('Oulu', 209648, 'Finland'),
+    ('Jyväskylä', 143948, 'Finland'),
+    ('Lahti', 120564, 'Finland'),
+    ('Kuopio', 118667, 'Finland'),
+    ('Pori', 83503, 'Finland');
 
 /* --- Insert: SpaceType --- */
 INSERT INTO SpaceType (`name`, `acronym`, `description`) VALUES

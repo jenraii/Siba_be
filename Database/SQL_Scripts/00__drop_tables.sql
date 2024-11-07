@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS Equipment;
 DROP TABLE IF EXISTS Space;
 DROP TABLE IF EXISTS SpaceType;
 DROP TABLE IF EXISTS Building;
+DROP TABLE IF EXISTS City;
 
 DROP TABLE IF EXISTS DepartmentPlanner;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS GlobalSetting;
-DROP TABLE IF EXISTS City;
 
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
