@@ -2,6 +2,16 @@ USE casedb; /* UPDATED 2024-01-24 */
 
 /* --- 01 CREATE TABLES --- */
 
+CREATE TABLE IF NOT EXISTS City (
+    id          INTEGER                 NOT NULL AUTO_INCREMENT,
+    name        VARCHAR(255)    UNIQUE  NOT NULL,
+    population  INTEGER,
+    country     VARCHAR(255),
+
+    PRIMARY KEY (id)
+
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+
 CREATE TABLE IF NOT EXISTS GlobalSetting (
     id              INTEGER                     NOT NULL AUTO_INCREMENT,
     variable            VARCHAR(255)   UNIQUE       NOT NULL,

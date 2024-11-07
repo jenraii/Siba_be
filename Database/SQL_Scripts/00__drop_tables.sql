@@ -28,6 +28,7 @@ DROP TABLE IF EXISTS DepartmentPlanner;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS GlobalSetting;
+DROP TABLE IF EXISTS City;
 
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */

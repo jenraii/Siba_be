@@ -2,11 +2,11 @@ name: dbbe_project
 
 services:
   siba_db_service:
-    image: mariadb:latest   # OR:   mariadb:11.1.2-jammy
+    image: mariadb:latest
     container_name: siba_db_container
     env_file: .env
     ports:
-      - "${DB_PORT}:3306"
+      - "${DB_PORT}:3306"  
     volumes:
       - ./Database/SQL_Scripts/000__CreateALLdb.sql:/docker-entrypoint-initdb.d/init.sql
       - mariadb_data:/var/lib/mysql
@@ -20,9 +20,9 @@ services:
     depends_on:
       - siba_db_service
     environment:
-      - DB_HOST=siba_db_service
+      - DB_HOST=siba_db_service 
     ports:
-      - "${BE_SERVER_PORT}:${BE_SERVER_PORT}"
+      - "${BE_SERVER_PORT}:${BE_SERVER_PORT}"  
     volumes:
       - .:/app
       - /app/node_modules

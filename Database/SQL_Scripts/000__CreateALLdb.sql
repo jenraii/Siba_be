@@ -28,6 +28,7 @@ DROP TABLE IF EXISTS DepartmentPlanner;
 DROP TABLE IF EXISTS User;
 DROP TABLE IF EXISTS Department;
 DROP TABLE IF EXISTS GlobalSetting;
+DROP TABLE IF EXISTS City;
 
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
@@ -60,6 +61,16 @@ DROP FUNCTION IF EXISTS getMissingItemAmount;
 USE casedb; /* UPDATED 2024-01-24 */
 
 /* --- 01 CREATE TABLES --- */
+
+CREATE TABLE IF NOT EXISTS City (
+    id          INTEGER                 NOT NULL AUTO_INCREMENT,
+    name        VARCHAR(255)    UNIQUE  NOT NULL,
+    population  INTEGER,
+    country     VARCHAR(255),
+
+    PRIMARY KEY (id)
+
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS GlobalSetting (
     id              INTEGER                     NOT NULL AUTO_INCREMENT,
@@ -395,6 +406,7 @@ CREATE TABLE IF NOT EXISTS log_event (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
@@ -906,6 +918,20 @@ DELIMITER ;
 USE casedb; /* UPDATED 2024-02-26 */
 
 /* INSERTS */
+
+/* --- Insert: City --- */
+INSERT INTO `City` (`name`, `population`, `country`) VALUES
+    ('Helsinki', 656611, 'Finland'),
+    ('Espoo', 292913, 'Finland'),
+    ('Vantaa', 237231, 'Finland'),
+    ('Tampere', 238140, 'Finland'),
+    ('Turku', 195137, 'Finland'),
+    ('Oulu', 209648, 'Finland'),
+    ('Jyväskylä', 143948, 'Finland'),
+    ('Lahti', 120564, 'Finland'),
+    ('Kuopio', 118667, 'Finland'),
+    ('Pori', 83503, 'Finland');
+
 /* --- Insert: GlobalSettings --- */
 INSERT INTO GlobalSetting(variable, description, numberValue, textValue) VALUES
     ('highPriority', 'High priority value', 800, NULL),
